@@ -18,21 +18,21 @@ Learn the programming model, common GPU libraries, understand GPU memory managem
 
 Exercises under `practicals/api` folder.
 
-#### CUDA Kernels
+#### CUDA Kernels & Threads
 
-Getting started with writing custom GPU kernels. 
+Getting started with writing custom GPU kernels, understanding concepts of CUDA threads, blocks and grids with practical exercises 
 
 `04_kernels.pdf`
+
+Exercises under `practicals/axpy` folder.
 
 ### Day 2
 
 #### Kernels & Threads
 
-Writing custom GPU kernels, understanding concepts of CUDA threads, blocks and grids with practical exercises  
+Review and wrap-up
 
 `04_kernels.pdf`
-
-Exercises under `practicals/axpy` folder.
 
 #### Shared Memory and Block Syncronization
 
@@ -60,7 +60,7 @@ Understand implementing a real-world numerical simulation using a toy mini-app. 
 
 `08_miniapp.pdf`
 
-Coding exercises in the top level `/miniapp/cuda` folder. Contains a working `OpenMP` implementation as well in the `miniapp/openmp` folder.
+Coding exercises in the `practicals/miniapp` folder.
 
 #### Bonus Content: Advanced GPU Concepts
 
