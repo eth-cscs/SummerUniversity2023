@@ -58,7 +58,7 @@ Understand implementing a real-world numerical simulation using a toy mini-app. 
 
 `07_miniapp_intro.pdf`
 
-`08_miniapp.pdf`
+`08_miniapp_exercise.pdf`
 
 Coding exercises in the `practicals/miniapp` folder.
 
@@ -66,9 +66,9 @@ Coding exercises in the `practicals/miniapp` folder.
 
 Asynchronous operations for concurrency, and using GPUs in distributed computing. Will not be covered in lectures, but extra content for motivated learners with practical examples. 
 
-`async.pdf`
+`bonus/async.pdf`
 
-`cuda_mpi.pdf`
+`bonus/cuda_mpi.pdf`
 
 Exercises under `practicals/async` folder.
 
