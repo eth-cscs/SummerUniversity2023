@@ -10,7 +10,7 @@ We will be using Slack to post news and links relevant to the event: you should 
 
 ## Schedule
 
-![SU2023 Schedule 07-21 at 14 25](https://github.com/eth-cscs/SummerUniversity2023/assets/4578156/7f70a6e2-18ea-429d-b3af-6fb0a4b44651)
+![SU2023 Schedule 07-21 at 15 08](https://github.com/eth-cscs/SummerUniversity2023/assets/4578156/f80ba289-8276-46b1-b9a1-15ef4e1586f1)
 
 
 ## Link to materials
