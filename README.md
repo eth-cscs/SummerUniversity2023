@@ -10,10 +10,12 @@ We will be using Slack to post news and links relevant to the event: you should 
 
 ## Schedule
 
-TODO
+![SU2023 Schedule 07-21 at 14 25](https://github.com/eth-cscs/SummerUniversity2023/assets/4578156/7f70a6e2-18ea-429d-b3af-6fb0a4b44651)
+
 
 ## Link to materials
 
+- [Intro Lab](./intro-lab) (Day 0)
 - [CUDA](./cuda) (Day 1, 2, 3 & 4)
 - [Python HPC](./python-hpc) (Day 4 & 5)
 
