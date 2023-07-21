@@ -10,10 +10,15 @@ We will be using Slack to post news and links relevant to the event: you should 
 
 ## Schedule
 
-TODO
+### Group 1 - In-person
+![G1 - in-person - SU2023 Schedule 07-21 at 15 20 23](https://github.com/eth-cscs/SummerUniversity2023/assets/4578156/774bda20-9db7-4e9b-a46b-aa8540b8d9a2)
+
+### Group 2 - Online
+![G2 - online - SU2023 Schedule 07-21 at 15 20 05](https://github.com/eth-cscs/SummerUniversity2023/assets/4578156/39fde3ac-f34a-4637-aff4-11636e1f9fc2)
 
 ## Link to materials
 
+- [Intro Lab](./intro-lab) (Day 0)
 - [CUDA](./cuda) (Day 1, 2, 3 & 4)
 - [Python HPC](./python-hpc) (Day 4 & 5)
 
