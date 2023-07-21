@@ -15,6 +15,6 @@ Attendance is recommended but is not mandatory (meaning we will not cover topics
     - Go to 3) while waiting..
 
 3) Prepare one introductory slide about yourself and post it on #networking, including
-Your academic background
-Your areas of interest (work related but not only)
+  - Your academic background
+  - Your areas of interest (work related but not only)
 
