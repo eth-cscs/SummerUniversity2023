@@ -33,28 +33,53 @@ __global__
 void blur_shared(const double *in, double* out, int n) {
     extern __shared__ double buffer[];
 
-    auto i = threadIdx.x + 1;
+    auto block_start = blockDim.x * blockIdx.x;
+    auto li = threadIdx.x + 1;
+    auto gi = li + block_start;
 
-    if(i<n-1) {
+    if(gi<n-1) {
         // load shared memory
-        buffer[i] = in[i];
-        if(i==1) {
-            buffer[0] = in[0];
-            buffer[n] = in[n];
+        buffer[li] = in[gi];
+        if(li==1) {
+            buffer[0] = in[block_start];
+            buffer[blockDim.x+1] = in[block_start+blockDim.x+1];
         }
 
         __syncthreads();
 
-        out[i] = 0.25*(buffer[i-1] + 2.0*buffer[i] + buffer[i+1]);
+        out[gi] = 0.25*(buffer[li-1] + 2.0*buffer[li] + buffer[li+1]);
     }
 }
 
+// No shared memory used, but 3 reads and 1 write to global memory
 __global__
 void blur(const double *in, double* out, int n) {
     auto i = threadIdx.x + blockDim.x * blockIdx.x + 1;
 
     if(i<n-1) {
         out[i] = 0.25*(in[i-1] + 2.0*in[i] + in[i+1]);
+    }
+}
+
+// No shared memory used, but 1 read and 3 writes to global memory
+__global__
+void blur_alt(const double *in, double* out, int n) {
+    auto i = threadIdx.x + blockDim.x * blockIdx.x;
+    auto in_i = in[i];
+
+    if(i > 0 && i < n-1) 
+    {
+        out[i-1] += 0.25*in_i;
+        out[i] += 0.5*in_i; 
+        out[i+1] += 0.25*in_i;
+    }
+    if (i == 0)
+    {
+        out[i+1] += 0.25*in_i;
+    }
+    if (i == n-1)
+    {
+        out[i-1] += 0.25*in_i;
     }
 }
 
@@ -85,14 +110,17 @@ int main(int argc, char** argv) {
     constexpr auto block_dim = 128;
     const auto grid_dim = (n+(block_dim-1))/block_dim;
 
+    // perform nsteps of the blur operation
     cuda_stream stream;
     auto start_event = stream.enqueue_event();
     for(auto step=0; step<nsteps; ++step) {
         if (use_shared) {
             blur_shared_block<block_dim><<<grid_dim, block_dim>>>(x0, x1, n);
+            // blur_shared<<<grid_dim, block_dim, (block_dim+2)*sizeof(double)>>>(x0, x1, n);
         }
         else {
             blur<<<grid_dim, block_dim>>>(x0, x1, n);
+            // blur_alt<<<grid_dim, block_dim>>>(x0, x1, n);
         }
         std::swap(x0, x1);
     }
