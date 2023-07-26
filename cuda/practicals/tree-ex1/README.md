@@ -53,6 +53,16 @@ cmake -DCMAKE_CUDA_ARCHITECTURES=<60,70 or 80> <THIS_REPO_GIT_SOURCE_DIR>
 make -j
 
 # running the mini-apps
+
+```
+module load daint-gpu
+module load CMake/3.22.1
+module swap PrgEnv-cray PrgEnv-gnu
+module load cdt/22.05
+module swap gcc gcc/11.2.0
+module load nvhpc/22.2
+```bash
+
 ./neighbor_search
 ```
 All executables are single-source, therefore you may also compile them directly on the command line, e.g.:
